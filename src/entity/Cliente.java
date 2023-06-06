@@ -1,6 +1,7 @@
 package entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class Cliente {
@@ -9,11 +10,11 @@ public class Cliente {
     private String numTelefono;
     private CartaDiCredito cartaDiCredito;
 
-    public Cliente(String username, String password, String numTelefono, HashMap<String,String> datiCarta) {
+    public Cliente(String username, String password, String numTelefono, String numeroCarta, String nomeIntestatario, String cognomeIntestatario, String dataScadenza) {
         this.username = username;
         this.password = password;
         this.numTelefono = numTelefono;
-        this.cartaDiCredito = new CartaDiCredito(datiCarta);
+        this.cartaDiCredito = new CartaDiCredito(numeroCarta, nomeIntestatario, cognomeIntestatario, dataScadenza);
     }
 
     @Override

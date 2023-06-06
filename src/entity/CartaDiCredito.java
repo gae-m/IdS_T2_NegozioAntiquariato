@@ -5,10 +5,6 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class CartaDiCredito {
-    public final static String NUM_CARTA = "numeroCarta";
-    public final static String NOME_INTESTATARIO = "nomeIntestatario";
-    public final static String COGNOME_INTESTATARIO = "cognomeIntestatario";
-    public final static String DATA_SCADENZA = "dataScadenza";
     private String numeroCarta;
     private String nomeIntestatario;
     private String cognomeIntestatario;
@@ -19,13 +15,6 @@ public class CartaDiCredito {
         this.nomeIntestatario = nomeIntestatario;
         this.cognomeIntestatario = cognomeIntestatario;
         this.dataScadenza = new Date(dataScadenza);
-    }
-
-    public CartaDiCredito(HashMap<String,String> datiCarta){
-        this.numeroCarta = datiCarta.get(NUM_CARTA);
-        this.nomeIntestatario = datiCarta.get(NOME_INTESTATARIO);
-        this.cognomeIntestatario = datiCarta.get(COGNOME_INTESTATARIO);
-        this.dataScadenza = new Date(datiCarta.get(DATA_SCADENZA));
     }
 
     @Override

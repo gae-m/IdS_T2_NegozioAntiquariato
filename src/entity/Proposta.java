@@ -4,11 +4,15 @@ public class Proposta {
 
     private long id;
     private float prezzo;
+    private Prodotto prodotto;
+    private Cliente cliente;
     private StatoProposta.Stato stato;
-    public Proposta(long id, float prezzo){
+    public Proposta(long id, float prezzo, Prodotto prodotto, Cliente cliente){
         this.id = id;
         this.prezzo = prezzo;
         this.stato = StatoProposta.Stato.OFFERTA;
+        this.prodotto = prodotto;
+        this.cliente = cliente;
     }
 
     @Override
