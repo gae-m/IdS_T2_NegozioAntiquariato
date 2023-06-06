@@ -1,20 +1,24 @@
 package entity;
 
+import java.io.File;
+import java.util.ArrayList;
+
 public class Scultura extends Prodotto {
 
     private float peso;
     private float alezza;
-    public Scultura(long codice, String nome, String descrizione, float peso, float altezza) {
-        super(codice, nome, descrizione);
+
+    public Scultura(String nome, String descrizione, ArrayList<File> pathsImmagini, float peso, float alezza) {
+        super(nome, descrizione, pathsImmagini);
         this.peso = peso;
-        this.alezza = altezza;
+        this.alezza = alezza;
     }
 
     @Override
     public String toString() {
-        return "Scultura{" +"codice=" + super.getCodice() +
-                ", nome='" + super.getNome() + '\'' +
-                ", descrizione='" + super.getDescrizione() + '\'' +", "+
+        return "Scultura{" +"codice=" + this.getCodice() +
+                ", nome='" + this.getNome() + '\'' +
+                ", descrizione='" + this.getDescrizione() + '\'' +", "+
                 "peso=" + peso + " KG" +
                 ", alezza=" + alezza + " cm " +
                 '}';

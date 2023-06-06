@@ -1,14 +1,35 @@
 package entity;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Prodotto {
     private long codice;
     private String nome;
     private String descrizione;
+    private ArrayList<Immagine> immagini;
 
-    public Prodotto(long codice, String nome, String descrizione) {
-        this.codice = codice;
+    public Prodotto(String nome, String descrizione, ArrayList<File> pathsImmagini) {
         this.nome = nome;
         this.descrizione = descrizione;
+        this.immagini = new ArrayList<>();
+        for(File f : pathsImmagini){
+            try{
+                immagini.add(new Immagine(f));
+            }
+            catch(IOException e){
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    public ArrayList<Immagine> getImmagini() {
+        return immagini;
+    }
+
+    public void setImmagini(ArrayList<Immagine> immagini) {
+        this.immagini = immagini;
     }
 
     @Override
